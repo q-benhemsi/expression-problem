@@ -68,4 +68,53 @@ Here `A: Num` is a constraint that says the type `A` must have an instance of th
 
 We achieve typeclasses in Scala with implicits. See the [Pet](./fp-typeclasses/src/main/scala/expression/problem/fp/typeclass/Pet.scala) for an example typeclass for the pet shop example.
 
+#### Existential types
+
+Typeclasses offer are a great approach to offer both data type and operation extensibility. However, they suffer when you want to have a list of items. This is because the typeclasses take a type parameter, and you cannot have a list of items of different types so the following does not compile:
+
+```scala
+val pets: List[Pet[?!]] = List(Dog, Cat, Fish)
+```
+
+This is where existential types come in. They allow us to extract a typeclass instance from a given type.
+
+```scala
+trait TCBox[Typeclass[_]] {
+  type T
+  val value: T
+  val instance: Typeclass[T]
+}
+
+case class MkTCBox[Typeclass[_], A](value: A)(implicit val instance: Typeclass[A]) extends TCBox[Typeclass] {
+  type T = A
+}
+```
+
+Now we can form a list of pets and calculate their total cost:
+
+```scala
+val pets: List[TCBox[Pet]] = List(MkTCBox(Dog), MkTCBox(Cat), MkTCBox(Fish))
+val totalCost = pets.map(pet => pet.instance.price(pet.value)).sum
+```
+
+However, we can never retrieve the original type once we form the existential type. The following code will not compile
+
+```scala
+val existentialDog: TCBox[Pet] = MkTCBox(Dog)
+val dog: Dog.type = existentialDog.value
+// <console>:15: error: type mismatch;
+//   found   : existentialDog.value.type (with underlying type existentialDog.T)
+//   required: Dog.type
+//   val dog: Dog.type = existentialDog.value
+```
+
+We can think of an existential type as swallowing the original type and only allowing us to use the typeclass instance.
+
 ### [Mixed OO-FP approach](mixed-oo-fp)
+
+Now that we have seen both the OO and FP approaches, let's use Scala's hybrid stance and have a go at combining the two to see if we can get the best of both worlds. This modules tries the following:
+
+- Pet is represented using an `abstract class` which allows data type extensibility from the OO approach.
+- `Pet` defines the `price` method which all pets must implement.
+- Additional operations are defined using typeclasses which allows the operational extensibility from the FP approach. In this example, there is a typeclass for `PetFood`.
+- 
