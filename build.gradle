@@ -1,0 +1,14 @@
+subprojects { Project subproject ->
+    configure(project) {
+        apply plugin: 'scala'
+        apply plugin: 'java-library'
+
+        repositories {
+            mavenCentral()
+        }
+
+        dependencies {
+            api("org.scala-lang:scala-library:2.12.18")
+        }
+    }
+}
