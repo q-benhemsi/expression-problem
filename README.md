@@ -23,13 +23,15 @@ This repo contains separate modules for exploring different approaches to tackli
 
 ### [Non-extensible approach](non-extensible)
 
-This module contains a simple example of how you may write a pet shop in Scala which supports dogs, cats and fish. The supported operations are the food that each pet eats, and whether two given pets are friends.
+This module contains a simple example of how you may write a pet shop in Scala which supports dogs, cats and fish. The supported operations are the price of each pet, and whether two given pets are friends.
 
 This module uses a `sealed trait` to represent a pet. This means that new pet types cannot be defined outside the file, so it is not data type extensible. New functions can be defined on `Pet` though, so it is operation extensible.
 
 ### [Simple OO approach](simple-oo)
 
 ### [Simple FP approach](simple-fp)
+
+This module tries to tackle the issue using some simple FP. The pets are defined using a sum type. Operations are defined using functions which run pattern matching on the `Pet` type. This allows for operation extensibility since we can easily add new functions. In this example a function for defining the pet food for each pet is added. Data type extensibility since the sum type is a `sealed trait` which cannot be extended outside the file.
 
 ### [FP typeclass approach](fp-typeclass)
 

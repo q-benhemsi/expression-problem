@@ -1,30 +1,28 @@
-package expression.problem.non.extensible
+package expression.problem.simple.fp
 
 import scala.annotation.tailrec
 
-sealed trait Pet {
-  def price: Double
-}
+/** In an FP language a sealed trait is called a sum type (aka coproduct).
+ * We can think of this `data Pet = Dog | Cat | Fish`.
+ * This page is very similar fo the non-extensible approach.
+ * The main difference is that `Pet` defines no methods.
+ * This is because methods belong to objects which are not a construct in FP languages. */
+sealed trait Pet
 
-object Dog extends Pet {
-  val price: Double = 20.00
-
-  override def toString: String = "Dog"
-}
-
-object Cat extends Pet {
-  val price: Double = 20.00
-
-  override def toString: String = "Cat"
-}
-
-object Fish extends Pet {
-  val price: Double = 12.00
-
-  override def toString: String = "Fish"
-}
+case object Dog extends Pet
+case object Cat extends Pet
+case object Fish extends Pet
 
 object Pet {
+
+  def petPrice(pet: Pet): Double = pet match {
+    case Dog => 20.00
+    case Cat => 20.00
+    case Fish => 12.00
+  }
+
+  def totalCost(pets: List[Pet]): Double = pets.map(petPrice).sum
+
   def areFriends(pet1: Pet, pet2: Pet): Boolean = (pet1, pet2) match {
     case (Dog, Dog) => false
     case (Dog, Cat) => false
@@ -51,6 +49,6 @@ object Pet {
     checkIfPetIsFriend(pets, Set.empty)
   }
 
-  def totalCost(pets: List[Pet]): Double = pets.map(_.price).sum
-
 }
+
+
