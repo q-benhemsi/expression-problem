@@ -1,2 +1,3 @@
 include "non-extensible"
 include "simple-fp"
+include "fp-typeclasses"
