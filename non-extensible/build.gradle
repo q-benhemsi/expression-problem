@@ -1,0 +1,4 @@
+apply plugin: 'application'
+application {
+    mainClassName = 'expression.problem.non.extensible.Main'
+}
