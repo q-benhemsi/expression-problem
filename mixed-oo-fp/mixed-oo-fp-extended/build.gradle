@@ -1,0 +1,8 @@
+apply plugin: 'application'
+application {
+    mainClassName = 'expression.problem.mixed.oo.fp.extended.PetShop'
+}
+
+dependencies {
+    implementation project(":mixed-oo-fp:mixed-oo-fp-base")
+}

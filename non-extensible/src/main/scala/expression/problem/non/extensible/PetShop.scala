@@ -8,4 +8,5 @@ object PetShop extends App {
   } else {
     println(s"Pets ${petsToBuy.map(_.toString).mkString(", ")} cannot be bought together.")
   }
+
 }
