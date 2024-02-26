@@ -1,3 +1,8 @@
+apply plugin: 'application'
+application {
+    mainClassName = 'expression.problem.fp.typeclasses.extended.PetShop'
+}
+
 dependencies {
     implementation project(":fp-typeclasses:fp-typeclasses-base")
 }

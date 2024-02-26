@@ -19,6 +19,4 @@ object Pet {
     def price(fish: Fish.type): Double = 12.00
   }
 
-  def priceOfPet[PetType](pet: PetType)(implicit petInstance: Pet[PetType]): Double = petInstance.price(pet)
-
 }

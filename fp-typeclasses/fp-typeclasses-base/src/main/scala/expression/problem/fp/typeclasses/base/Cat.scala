@@ -1,3 +1,3 @@
 package expression.problem.fp.typeclasses.base
 
-object Cat
+case object Cat
