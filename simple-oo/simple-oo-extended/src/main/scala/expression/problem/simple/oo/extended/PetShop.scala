@@ -1,6 +1,7 @@
-package expression.problem.simple.oo
+package expression.problem.simple.oo.extended
 
-import expression.problem.simple.oo.ExtendedPets._
+import expression.problem.simple.oo.base._
+import expression.problem.simple.oo.extended.ExtendedPets._
 
 object PetShop extends App {
   val petsToBuy: List[Pet] = List(new ExtendedDog(), new ExtendedFish(), new Bird())

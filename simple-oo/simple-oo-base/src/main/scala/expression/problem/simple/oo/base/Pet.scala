@@ -1,4 +1,4 @@
-package expression.problem.simple.oo
+package expression.problem.simple.oo.base
 
 import scala.annotation.tailrec
 

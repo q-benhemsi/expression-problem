@@ -1,4 +1,4 @@
-package expression.problem.simple.oo
+package expression.problem.simple.oo.base
 
 class Cat extends Pet {
   val price = 20.00

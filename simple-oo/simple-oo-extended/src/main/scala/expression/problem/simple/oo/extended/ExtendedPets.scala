@@ -1,4 +1,6 @@
-package expression.problem.simple.oo
+package expression.problem.simple.oo.extended
+
+import expression.problem.simple.oo.base._
 
 object ExtendedPets {
 

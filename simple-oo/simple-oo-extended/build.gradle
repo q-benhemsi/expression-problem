@@ -1,0 +1,8 @@
+apply plugin: 'application'
+application {
+    mainClassName = 'expression.problem.simple.oo.extended.PetShop'
+}
+
+dependencies {
+    implementation project(":simple-oo:simple-oo-base")
+}
