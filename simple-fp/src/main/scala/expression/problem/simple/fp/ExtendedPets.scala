@@ -4,7 +4,7 @@ package expression.problem.simple.fp
 object ExtendedPets {
 
   /** Defining a new data type. */
-  // object Bird extends Pet
+  // case object Bird extends Pet
   // This does not compile because `Pet` is sealed and we cannot extend it outside of its file.
 
   /** Defining a new operation. */

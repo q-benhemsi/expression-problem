@@ -3,7 +3,6 @@ package expression.problem.simple.fp
 import scala.annotation.tailrec
 
 /** In an FP language a sealed trait is called a sum type (aka coproduct).
- * We can think of this `data Pet = Dog | Cat | Fish`.
  * This page is very similar fo the non-extensible approach.
  * The main difference is that `Pet` defines no methods.
  * This is because methods belong to objects which are not a construct in FP languages. */

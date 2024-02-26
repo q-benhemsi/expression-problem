@@ -6,22 +6,16 @@ sealed trait Pet {
   def price: Double
 }
 
-object Dog extends Pet {
+case object Dog extends Pet {
   val price: Double = 20.00
-
-  override def toString: String = "Dog"
 }
 
-object Cat extends Pet {
+case object Cat extends Pet {
   val price: Double = 20.00
-
-  override def toString: String = "Cat"
 }
 
-object Fish extends Pet {
+case object Fish extends Pet {
   val price: Double = 12.00
-
-  override def toString: String = "Fish"
 }
 
 object Pet {
