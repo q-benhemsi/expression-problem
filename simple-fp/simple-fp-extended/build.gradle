@@ -1,0 +1,8 @@
+apply plugin: 'application'
+application {
+    mainClassName = 'expression.problem.simple.fp.extended.PetShop'
+}
+
+dependencies {
+    implementation project(":simple-fp:simple-fp-base")
+}

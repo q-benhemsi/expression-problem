@@ -1,4 +1,4 @@
-package expression.problem.simple.fp
+package expression.problem.simple.fp.base
 
 import scala.annotation.tailrec
 

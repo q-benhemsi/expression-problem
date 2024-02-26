@@ -1,4 +1,6 @@
-package expression.problem.simple.fp
+package expression.problem.simple.fp.extended
+
+import expression.problem.simple.fp.base._
 
 object PetShop extends App {
   val petsToBuy: List[Pet] = List(Dog, Fish)

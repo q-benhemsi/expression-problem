@@ -1,6 +1,8 @@
-package expression.problem.simple.fp
+package expression.problem.simple.fp.extended
 
-/** In this file we attempt to extend [[Pet]] defined in `DefaultPets` with more data types and operations. */
+import expression.problem.simple.fp.base._
+
+/** In this file we attempt to extend [[Pet]] with more data types and operations. */
 object ExtendedPets {
 
   /** Defining a new data type. */
