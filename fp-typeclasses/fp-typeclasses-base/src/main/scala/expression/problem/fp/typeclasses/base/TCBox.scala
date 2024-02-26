@@ -1,4 +1,4 @@
-package expression.problem.fp.typeclasses
+package expression.problem.fp.typeclasses.base
 
 /** Code take from https://pjrt.medium.com/existential-types-in-scala-6321f19c4a57. */
 trait TCBox[Typeclass[_]] {

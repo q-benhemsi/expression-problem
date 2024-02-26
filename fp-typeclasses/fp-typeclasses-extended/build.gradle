@@ -1,0 +1,3 @@
+dependencies {
+    implementation project(":fp-typeclasses:fp-typeclasses-base")
+}

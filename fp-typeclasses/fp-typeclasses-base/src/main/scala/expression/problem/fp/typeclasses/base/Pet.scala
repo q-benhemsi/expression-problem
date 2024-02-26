@@ -1,4 +1,4 @@
-package expression.problem.fp.typeclasses
+package expression.problem.fp.typeclasses.base
 
 /** Pet typeclass. */
 trait Pet[PetType] {

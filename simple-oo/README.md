@@ -11,3 +11,4 @@ Data type extensibility: ✅
 
 Operation extensibility: ❌
 - We cannot add a new operation to the `Pet` class without modifying the class itself.
+- We can add functions which act on `Pet` types, but these functions will not be part of the `Pet` class.

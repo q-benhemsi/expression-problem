@@ -1,4 +1,6 @@
-package expression.problem.fp.typeclasses
+package expression.problem.fp.typeclasses.extended
+
+import expression.problem.fp.typeclasses.base._
 
 object ExtendedPets {
 

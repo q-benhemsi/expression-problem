@@ -1,4 +1,5 @@
 include "non-extensible"
 include "simple-fp"
 include "simple-oo"
-include "fp-typeclasses"
+include "fp-typeclasses:fp-typeclasses-base"
+include "fp-typeclasses:fp-typeclasses-extended"
