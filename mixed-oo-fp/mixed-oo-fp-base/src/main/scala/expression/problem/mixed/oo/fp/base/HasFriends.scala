@@ -25,4 +25,25 @@ object HasFriends {
     }
     checkIfPetIsFriend(pets.toList, Set.empty)
   }
+  implicit val dogHasFriends: HasFriends[Dog.type] = new HasFriends[Dog.type] {
+    def isFriend(pet1: Dog.type, pet2: Pet): Boolean = pet2 match {
+      case Cat => false
+      case Dog => false
+      case Fish => true
+    }
+  }
+  implicit val catHasFriends: HasFriends[Cat.type] = new HasFriends[Cat.type] {
+    def isFriend(pet1: Cat.type, pet2: Pet): Boolean = pet2 match {
+      case Cat => false
+      case Dog => false
+      case Fish => true
+    }
+  }
+  implicit val fishHasFriends: HasFriends[Fish.type] = new HasFriends[Fish.type] {
+    def isFriend(pet1: Fish.type, pet2: Pet): Boolean = pet2 match {
+      case Cat => false
+      case Dog => true
+      case Fish => true
+    }
+  }
 }

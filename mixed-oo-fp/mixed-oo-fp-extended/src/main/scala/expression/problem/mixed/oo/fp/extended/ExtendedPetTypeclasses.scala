@@ -1,11 +1,12 @@
 package expression.problem.mixed.oo.fp.extended
 
-import expression.problem.mixed.oo.fp.base.{HasFriends, Pet, TCBox}
+import expression.problem.mixed.oo.fp.base.{HasFriends, HasPrice, Pet, TCBox}
 
 import scala.annotation.tailrec
 
 case class ExtendedPetTypeclasses[PetType]()(
-  implicit val petFood: PetFood[PetType],
+  implicit val hasPrice: HasPrice[PetType],
+  val petFood: PetFood[PetType],
   val hasFriends: HasFriends[PetType]
 )
 
