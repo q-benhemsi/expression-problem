@@ -7,6 +7,8 @@ trait PetFood[PetType] {
 }
 
 object PetFood {
+
+  /** Base pet instances */
   implicit val dogFoodInstance: PetFood[Dog.type] = new PetFood[Dog.type] {
     override def food(pet: Dog.type): String = "dog-food"
   }
@@ -16,7 +18,10 @@ object PetFood {
   implicit val fishFoodInstance: PetFood[Fish.type] = new PetFood[Fish.type] {
     override def food(pet: Fish.type): String = "fish-food"
   }
+
+  /** New pet */
   implicit val birdFoodInstance: PetFood[Bird.type] = new PetFood[Bird.type] {
     override def food(pet: Bird.type): String = "bird-food"
   }
+
 }

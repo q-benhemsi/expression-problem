@@ -19,28 +19,22 @@ object ExtendedPets {
   class ExtendedDog extends Dog {
     override val price: Double = 25.00
     override def isFriend(pet: Pet): Boolean = pet match {
-      case _: Dog => false
-      case _: Cat => false
-      case _: Fish => true
       case _: Bird => true
+      case other => super.isFriend(other)
     }
   }
 
   class ExtendedCat extends Cat {
     override def isFriend(pet: Pet): Boolean = pet match {
-      case _: Dog => false
-      case _: Cat => false
-      case _: Fish => true
       case _: Bird => true
+      case other => super.isFriend(other)
     }
   }
 
   class ExtendedFish extends Fish {
     override def isFriend(pet: Pet): Boolean = pet match {
-      case _: Dog => true
-      case _: Cat => false
-      case _: Fish => true
       case _: Bird => true
+      case other => super.isFriend(other)
     }
   }
 

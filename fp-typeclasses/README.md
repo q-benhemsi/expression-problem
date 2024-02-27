@@ -37,6 +37,14 @@ Here `A: AddOne` is a constraint that says the type `A` must have an instance of
 
 We achieve typeclasses in Scala with implicits. See the [Pet](./src/main/scala/expression/problem/fp/typeclasses/Pet.scala) for an example typeclass for the pet shop example.
 
+## Traits vs typeclasses
+
+A lot of the same functionality that typeclasses provide can be achieved with traits. The main differences are:
+- You cannot mixin traits into existing types, but you can provide typeclass instances for existing types.
+- Overriding a trait method requires  // TODO
+
+Typically, I would recommend using traits over typeclasses in closed applications where you have control over all the types. However, in open applications where you want to allow users to define new types and operations, typeclasses are a better approach.
+
 ## Existential types
 
 Typeclasses are a great approach to offer both data type and operation extensibility. However, they suffer when you want to have a list of items. This is because the typeclasses take a type parameter, and you cannot have a list of items of different types so the following does not compile:
@@ -49,7 +57,7 @@ This is where existential types come in. They allow us to extract a typeclass in
 
 ```scala
 trait TCBox[Typeclass[_]] {
-  type T
+  type T // who am I?
   val value: T
   val instance: Typeclass[T]
 }

@@ -3,6 +3,9 @@ package expression.problem.fp.typeclasses.base
 /** Pet typeclass. */
 trait Pet[PetType] {
   def price(pet: PetType): Double
+
+  // We cannot define the isFriend method because we don't have a common type shared by all pets
+  // def isFriend(pet: PetType, otherPet: ??): Boolean
 }
 
 object Pet {
