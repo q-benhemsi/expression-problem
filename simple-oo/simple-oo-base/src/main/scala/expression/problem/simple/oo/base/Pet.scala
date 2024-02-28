@@ -2,6 +2,7 @@ package expression.problem.simple.oo.base
 
 import scala.annotation.tailrec
 
+/** `Pet` is no longer a sealed trait, instead we have an abstract class which allows us to extend it outside the file. */
 abstract class Pet {
   def price: Double
   def isFriend(pet: Pet): Boolean

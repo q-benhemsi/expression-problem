@@ -19,6 +19,9 @@ case object Fish extends Pet {
 }
 
 object Pet {
+  /** This function returns a Boolean of whether pet1 likes pet2.
+   * It is non-symmetric, e.g. `areFriends(Cat, Fish) = true` because cats will happily eat fish, but `areFriends(Fish, Cat) = false`
+   * because fish don't like being eaten. */
   def areFriends(pet1: Pet, pet2: Pet): Boolean = (pet1, pet2) match {
     case (Dog, Dog) => false
     case (Dog, Cat) => false
@@ -31,6 +34,9 @@ object Pet {
     case (Fish, Fish) => true
   }
 
+  /** `pets` is the list of pets that the customer wants to buy.
+   * This checks that all the pets in that list are friendly towards each other using the `areFriends` function.
+   * No responsible pet shop will sell a customer two pets that do not get on with each other! */
   def canBuyPets(pets: List[Pet]): Boolean = {
     @tailrec
     def checkIfPetIsFriend(remainingPets: List[Pet], accumulatedPets: Set[Pet]): Boolean = {

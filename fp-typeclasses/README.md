@@ -20,7 +20,7 @@ instance AddOne[Int] {
 }
 
 instance AddOne[Double] {
-  def addOne(x: Double): Double = x + 1
+  def addOne(x: Double): Double = x + 1.00
 }
 
 instance AddOne[String] {
@@ -35,13 +35,13 @@ def addTwo[A: AddOne](x: A): A = addOne(addOne(x))
 
 Here `A: AddOne` is a constraint that says the type `A` must have an instance of the `AddOne` typeclass.
 
-We achieve typeclasses in Scala with implicits. See the [Pet](./src/main/scala/expression/problem/fp/typeclasses/Pet.scala) for an example typeclass for the pet shop example.
+We achieve typeclasses in Scala with implicits. See the [Pet](./fp-typeclasses-base/src/main/scala/expression/problem/fp/typeclasses/base/Pet.scala) for an example typeclass for the pet shop example.
 
 ## Traits vs typeclasses
 
 A lot of the same functionality that typeclasses provide can be achieved with traits. The main differences are:
 - You cannot mixin traits into existing types, but you can provide typeclass instances for existing types.
-- Overriding a trait method requires  // TODO
+- Overriding trait functions requires defining a new object which extends the existing one, and then overriding the function. With typeclasses, you can provide a new instance for the type.
 
 Typically, I would recommend using traits over typeclasses in closed applications where you have control over all the types. However, in open applications where you want to allow users to define new types and operations, typeclasses are a better approach.
 

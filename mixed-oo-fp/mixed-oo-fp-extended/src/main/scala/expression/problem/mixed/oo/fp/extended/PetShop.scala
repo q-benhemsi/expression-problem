@@ -12,8 +12,6 @@ object PetShop extends App {
 
   val petsToBuy: List[(Pet, TCBox[ExtendedPetTypeclasses])] = List(
     getExtendedPet(Dog),
-//    getExtendedPet(new Cat),
-//    getExtendedPet(new Fish),
     getExtendedPet(Bird)
   )
   val pets = petsToBuy.map(_._1)

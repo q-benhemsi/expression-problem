@@ -1,7 +1,7 @@
 package expression.problem.non.extensible
 
 object PetShop extends App {
-  val petsToBuy: List[Pet] = List(Dog, Fish)
+  val petsToBuy: List[Pet] = List(Cat, Fish)
 
   if (Pet.canBuyPets(petsToBuy)) {
     println(s"You can buy ${petsToBuy.mkString(", ")} together. This costs ${Pet.totalCost(petsToBuy)}.")
